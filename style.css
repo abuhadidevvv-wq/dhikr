@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Red Hat Text', sans-serif;
+}
+h1 {
+    color: rgb(57, 172, 180);
+    text-shadow: 0 0 10px rgb(32, 174, 199);
+
+    position: absolute;
+    right: 2vw;
+    bottom: 2vw;
+
+    width: auto;
+    height: auto;
+
+    font-size: 1.0rem;
+    margin: 0;
+
+    animation: blink 8s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    48% {
+        opacity: 0;
+    }
+
+    51% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    background: url('https://i.pinimg.com/originals/7a/63/d4/7a63d4c91a83613b8088c9cde3f3ceaf.gif') no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+
+.azkar-container {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 22vw;
+    height: 9vw;
+
+    background: #111111;
+    border-radius: 0.7vw;
+    border: 0.078vw solid rgba(255,255,255,0.07);
+
+    box-sizing: border-box;
+}
+
+/* بوكس الأيقونة */
+.azkar-icon {
+    position: absolute;
+
+    top: 1vw;
+    left: 1vw;
+
+    width: 2.5vw;
+    height: 2.5vw;
+
+    background: #353230;
+    border-radius: 0.4vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #28a6ab;
+    font-size: 1.1rem;
+
+    z-index: 2;
+}
+
+/* العنوان */
+.azkar-title {
+    position: absolute;
+
+    top: 1.2vw;
+    left: 4.2vw;
+
+    color: #fff;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    z-index: 2;
+}
+
+/* الذكر */
+.azkar-text {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 85%;
+
+    transform: translate(-50%, -50%);
+
+    color: #fff;
+    font-size: 1.50rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    text-align: center;
+
+    z-index: 1;
+
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.azkar-text.hide {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 8px));
+}
+
+.azkar-text.show {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+
+/* =========================
+   ضبط أساسي لكل الشاشات
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* =========================
+   الآيباد والشاشات المتوسطة
+========================= */
+
+@media (max-width: 1024px) {
+
+    .azkar-container {
+        width: 320px;
+        min-height: 130px;
+        height: auto;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+
+    .azkar-icon {
+        top: 15px;
+        left: 15px;
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 17px;
+    }
+
+    .azkar-title {
+        top: 18px;
+        left: 70px;
+
+        font-size: 17px;
+    }
+
+    .azkar-text {
+        width: 85%;
+
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    h1 {
+        right: 20px;
+        bottom: 20px;
+
+        font-size: 18px;
+    }
+}
+
+
+/* =========================
+   الجوال
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .azkar-container {
+        width: calc(100vw - 40px);
+        max-width: 360px;
+
+        min-height: 140px;
+        height: auto;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+
+        border-radius: 12px;
+    }
+
+    .azkar-icon {
+        top: 15px;
+        left: 15px;
+
+        width: 38px;
+        height: 38px;
+
+        border-radius: 7px;
+
+        font-size: 16px;
+    }
+
+    .azkar-title {
+        top: 18px;
+        left: 65px;
+
+        font-size: 16px;
+    }
+
+    .azkar-text {
+        width: 88%;
+
+        font-size: clamp(16px, 5vw, 20px);
+        line-height: 1.6;
+
+        padding: 0 5px;
+    }
+
+    h1 {
+        right: 15px;
+        bottom: 15px;
+
+        font-size: 16px;
+    }
+}
+
+
+/* =========================
+   الجوال الصغير
+========================= */
+
+@media (max-width: 380px) {
+
+    .azkar-container {
+        width: calc(100vw - 24px);
+        min-height: 135px;
+    }
+
+    .azkar-text {
+        font-size: 16px;
+    }
+
+    .azkar-title {
+        font-size: 15px;
+    }
+
+    .azkar-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    h1 {
+        font-size: 14px;
+    }
+}
